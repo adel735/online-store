@@ -7,8 +7,8 @@ node{
     
     stage('Run Docker Compose File')
     {
-        sh 'sudo -S docker-compose build'
-        sh 'sudo -S docker-compose up -d'
+        sh 'sdocker-compose build'
+        sh 'docker-compose up -d'
     }
   stage('PUSH image to Docker Hub')
     {
@@ -21,8 +21,8 @@ node{
         //docker.withRegistry( 'https://registry.hub.docker.com', 'DockerHubPassword' ) {
              
              sh 'docker login -u "adelelmaghloub" -p "adelmedo2020" docker.io'
-             //sh 'sudo docker push upasanatestdocker/mysql'
-             //sh 'sudo docker push upasanatestdocker/job1_web1.0'
+             //sh 'docker push upasanatestdocker/mysql'
+             //sh 'docker push upasanatestdocker/job1_web1.0'
              sh 'docker push adelelmaghloub/onlineshop'
             // sh 'docker push upasanatestdocker/mysql'
           
